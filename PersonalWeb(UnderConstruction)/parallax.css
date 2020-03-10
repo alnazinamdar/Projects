@@ -1,0 +1,14 @@
+        .parallax {
+            height: 100vh;
+            background-image: url(Hunters.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -5;
+        }
+@media only screen and (max-width: 450px) {
+    .parallax {
+        background-position: -400px; 0;
+    }
+}

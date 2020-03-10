@@ -1,0 +1,177 @@
+.homebutton {
+            background-color: #000000;
+            width: 80px;
+            height: 70px;
+            color: #00d4f4;
+            text-align: center;
+            border-bottom-right-radius: 30px;
+            transition: 0.4s;
+            font-style: normal;
+            position: fixed;
+            z-index: 6;
+            text-decoration: none;
+            box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.3);
+            float: left;
+        }
+.homebutton:hover {
+            color: white;
+            transition: 0.4s;
+            box-shadow: 10px 0px 0px 0px #00d4f4;
+        }
+#H {
+            font-size: 50px;
+            display: block;
+            transition: 0.5s;
+        }
+#H:hover {
+    -webkit- transform: rotate(360deg);
+    -moz- transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: 0.5s;
+}
+/* navbar base */
+.sidebar {
+        background-color: rgba(30, 30, 30, 0.8);
+        height: 100vh;
+        width: 55px;
+        position: fixed;
+        padding-left: 5px;
+        z-index: 5;
+        padding-top: 200px;
+        list-style: none;
+        transition: 0.1s;
+        }
+@media only screen and (min-width: 1100px) {
+    /* hides the content in my sidebar when it minimizes from hover, also keeps the arrow pointed our when it hides the words */
+      .hider {
+            overflow: hidden;
+        }
+    .sidebar {
+        width: 6px;
+    }
+    .sidebar:after {
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 50vh;
+        width: 0;
+        height: 0;
+        border-top:  13px solid transparent;
+        border-left: 15px solid rgba(30, 30, 30, 0.8);
+        border-bottom: 13px solid transparent;
+        transition: ease-out 0.1s;
+    }
+    .sidebar:hover {
+    width: 65px;
+}
+    .sidebar:hover:after {
+        transform: scale(0.0);
+        transition: ease-in 0.1s;
+    }
+}
+/* min width 1100px ends*/
+
+.scrollcont {
+    padding: 0px;
+    list-style-type: none;
+    
+}
+/* dropbown button */
+.label {
+    display: none;
+}
+/* just section buttons, shouldn't have to mess with them */
+        .button {
+            text-align: center;
+            padding-top: 10px;
+            color: gray;
+            transition: 0.5s;
+            width: 60px;
+            height: 40px;
+            font-size: 15px;
+            text-decoration: none;
+            display: block;
+        }
+        .button:hover {
+            color: #00d4f4;
+            transition: 0.5s;
+            box-shadow: 5px 0px #00d4f4;
+        }
+/* checkbox that controls dropdown */
+#check01 {
+    display: none;
+}
+@media only screen and (max-width: 1100px) {
+    .sidebar {
+        float: left;
+        background-color: rgba(30, 30, 30, 0.8);
+        position: fixed;
+        height: 40px;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        padding-left: 100px;
+        text-align: center;
+    }
+    .button {
+        float: left;
+        width: 80px;
+        height:auto;
+        font-size: 17px;
+        padding: 0px;
+        padding-top: 10px;
+    }
+    .button:hover {
+        box-shadow: 0px 2px #00d4f4;
+    }
+
+
+    .homebutton {
+        width: 60px;
+        height: 60px;
+    }
+    #H{font-size: 42px;}
+}
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        padding-left: 30px;
+    }
+        .label {
+        display: block;
+        height: 30px;
+        padding-top: 10px;
+        text-align: center;
+        width: 80px;
+        color: gray;
+        position: relative;
+    }
+    .scrollcont {
+      position: absolute;
+      max-height: 0px;
+      padding: 0px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      background-color: rgba(30, 30, 30, 0.8);
+    }
+    #check01:checked ~ .scrollcont {
+        max-height: 132px;
+        transition: max-height 0.5s ease-in;
+    }
+        .homebutton {
+        height: 40px;
+        width: 30px;
+        border-radius: 0px;
+    }
+    .button {
+        float: none;
+        background-color: rgba(30, 30, 30, 0.0);
+        width: 120px;
+        margin-bottom: 3px;
+        height: 20px;
+    }
+/* homebutton, not relevent to navbar */
+        .homebutton:hover {box-shadow: none;}
+    #H{
+       font-size: 30px; 
+    }
+}
