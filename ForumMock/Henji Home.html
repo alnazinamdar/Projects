@@ -1,0 +1,507 @@
+<html>
+<head>
+    <link rel="icon" href="icono.png">
+    <title>Forusource</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <style>
+        .body {
+            margin: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+            overflow-x: hidden;
+        }
+        .head {
+            text-align: center;
+            background-color: #191919;
+            height:30px;
+            background-position:top;
+            background-size: cover;
+            text-align: center;
+            color: limegreen;
+            padding-top: 10px;
+            z-index: 1;
+            font-size: 25px;
+            padding-bottom: 10px;
+            position: relative
+        }
+        .headnav {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #191919;
+            color: white;
+            list-style-type: none;
+            text-decoration: none;
+            font-size: 15px;
+            top:0;
+            position: sticky;
+            box-shadow: 0px 10px 20px #333333;
+            z-index: 2;
+            
+        }
+        .sidenavbtn {
+            float: left;
+            font-size: 15px;
+            cursor:pointer;
+            padding: 15px;
+            transition: 0.4s;
+        }
+        .navcontent {
+             float: right;
+        }
+        .navcontent a {
+            padding: 15px;
+            display:block;
+            text-decoration: none;
+            color: white;
+            border-radius: 100px;
+            transition: 0.4s;
+        }
+        .navcontent a:hover{
+            color: black;
+            background-color: limegreen;
+            transition: 0.4s;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top:0;
+            left: 0;
+            background-color: black;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 3;
+        }
+        .sidenav a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover{
+            background-color: limegreen;
+            color: black;
+            border-radius: 5px;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top:0;
+            right: 0px;
+            font: 25px;
+            margin-left: 50px;
+            transition: 0.3s;
+        }
+        .sidenavbtn:hover{
+            background-color: limegreen;
+            color: black;
+        }
+        .container {
+            width: auto;
+            height: auto;
+            min-width: 400px;
+            display: block;
+        }
+        .left {
+            width: 23%;
+            height: 100%;
+            float: left;
+            box-shadow: 5px 0 10px -5px #3a3a3a;
+            position: fixed;
+            color: white;
+            background-color: #2d2d2d;           
+            top: 0;
+            display: block;
+        }
+        .right{
+            float: right;
+            width: 77%;
+        }
+        .parallax {
+            background-image: url(SkyBG.jpg);
+            min-height:600px;
+			background-attachment: fixed;
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+            z-index: -2;
+            opacity: 0.80;
+        }
+        .parallax2 {
+            background-image: url(CityBG.png);
+            min-height:700px;
+			background-attachment: fixed;
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+            z-index: -2;
+            opacity: 0.80;
+        }
+        .calendar {
+            width: 90%;
+            height: 25%;
+            padding-left: 5%;
+        }
+        .collapse {
+            background-color: #3d3d3d;
+            color: limegreen;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            opacity: 0.7
+        }
+        .active, .collapse:hover {
+            opacity: 1;
+            transition: 0.4s;
+        }
+        .panel {
+            display: none;
+            padding: 5px;
+            overflow: hidden;
+        }
+        .cappy {
+            position: absolute;
+            left: 50%;
+            top: 500px;
+            width: 25%;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            transition: 0.4s;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .cappy:hover{
+            opacity: 1;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .cappy span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+        .cappy2 {
+            position: absolute;
+            left: 50%;
+            top: 1550px;
+            width: 25%;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            transition: 0.4s;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .cappy2:hover{
+            opacity: 1;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        .cappy2 span.border2 {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+        .forasource{
+            float: left;
+            font-size: 20px;
+            padding-top: 10px;
+            transition: 0.4s;
+            padding-left: 20px;
+            text-decoration: none; 
+        }
+        .forasource:hover {
+            color: limegreen;
+            transition: 0.4s;
+        }
+        .forasource:visited {
+            color: white;
+        }
+        .forasource:visited:hover{
+            color: limegreen;
+        }
+        .calhead {
+            background-color: #333333;
+            height: 50px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .logbtn {
+            color: white;
+            border-style: none;
+            padding: 15px;
+            display:block;
+            text-decoration: none;
+            color: white;
+            border-radius: 100px;
+            transition: 0.4s;
+            background-color: #191919;
+            font-size: 15px;
+        }
+        .logbtn:hover {
+            color: black;
+            background-color: limegreen;
+            transition: 0.4s;
+        }
+        .modal{
+            display: none;
+            position: fixed;
+            z-index: 6;
+            left: 0;
+            right:0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            margin-top: 0;
+            padding-top: 50px;
+            }
+        .smack-content {
+            background-color: white;
+            margin: 5% auto 15% auto;
+            border: 1px solid gray;
+            width: 40%;
+            height: 38%;
+            padding: 0px;
+        }
+        .smackx {
+            position: absolute;
+            right: 25px;
+            top:0;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .smackx:hover, .smackx:focus {
+            color: black;
+            cursor: pointer;
+        }
+        .smackcontainer {
+           padding: 2px;
+        }
+        input[type=text], input[type=password] {
+        width: 80%;
+        padding: 12px;
+        margin: 8px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+}
+        @media only screen and (max-width:1080px) {
+            .left {
+                display: none;
+            }
+            .right {width: 100%;
+            }
+            .cappy, .cappy2 {
+                text-align: center;
+                left:38%;
+                width: 30%;
+                display: flex;
+            }
+        }
+        @media only screen and (max-width:900px) {
+            .parscroll {
+                overflow-y: scroll;
+                height: auto;
+            }
+        }
+        .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+        }
+        @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+        }
+    
+        @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+        }
+        .upbtn {
+            display: none;
+            background-color: 333333;
+            color: white;
+            font-size: 40px;
+            opacity: 0.2;
+            position: fixed;
+            left: 96%;
+            top:93%;
+            z-index: 10;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 9px;
+            transition: 0.4s;
+            border-style: none;
+        }
+        .upbtn:hover {
+            opacity: 1;
+            transition: 0.4s;
+        }
+        .wikipage {
+            text-decoration: none;
+            margin-right: 20px;
+            color:white;
+            float: right;
+            transition: 0.4s;
+        }
+        .wikipage:hover {
+            color: limegreen;
+            transition: 0.4s
+        }
+        .wikipage:visited{
+            opacity: 0.3;
+        }
+    </style>
+    </head>
+<body class="body">
+    <button onclick="topFunction()" id="upbt" class="upbtn">&#8679;</button>
+    <script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("upbt").style.display = "block";
+    } else {
+        document.getElementById("upbt").style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+    </script>
+    <div id="id01" class="modal">
+        
+    <form class="smack-content animate" action="/action_page.php">
+        <div style="background-color: limegreen; height: 10%; width: 100%; font-size: 30px; margin: 0; padding-bottom: 15px; text-align: center; ">Login</div>
+        <div class="smackcontainer">
+        </div>
+      <div class="smacktainer">
+      <label style="margin-left: 30px;" for="uname">Username<br></label>
+      <input style="margin-left: 30px;" type="text" placeholder="Enter Username" name="uname" required>
+<br>
+      <label style="margin-left: 30px;" for="psw">Password<br></label>
+      <input style="margin-left: 30px;" type="password" placeholder="Enter Password" name="psw" required>
+          <br>
+    <input style="padding-left: 30px;" type="checkbox" checked="checked" name="remember"> Remember me
+          <br>
+          <br>
+           <span style="margin-left: 30px;" class="psw">Forgot <a href="#">password?</a></span>
+          <br>
+          <br>
+      <button style="margin-left: 30px;" class="logbtn" type="submit">Login</button>
+          
+      <label>
+      </label>
+    </div>
+        </form>
+    </div>
+      <script>
+    var smack = document.getElementById('id01');
+
+        
+    window.onclick = function(event) {
+    if (event.target == smack) {
+        smack.style.display = "none";
+    }
+    }</script>
+    <div class="head">Home</div>
+    <ul class="headnav">
+    <li class="sidenavbtn" onclick="openbar()">&#9776;</li>
+        <a class="forasource" href="Henji%20Home.html"> &#10086; Forusource</a>
+    <li class="navcontent"><a title="Settings" href="#">&#9881;</a></li>
+    <li class="navcontent"><a title="Favorites" href="#">&#10084;</a></li>
+    <li class="navcontent"><a title="Profile" href="#">&#x3A9;</a></li>
+     <li class="navcontent"><button title="Login" class="logbtn" onclick="document.getElementById('id01').style.display='block'">&#10149;</button></li>
+    </ul>
+    <div id="mysidenav" class="sidenav">
+    <a href="javascript:void:(0)" class="closebtn" onclick="closebar()">&times;</a>
+    <a href="#">Top</a>
+    <a href="#">Viral</a>
+    <a href="#">Funny</a>
+    <a href="#">Controversial</a>
+    <a href="#">Rising</a>
+    </div>
+    <script>
+    function openbar() {
+    document.getElementById("mysidenav").style.width="200px";
+    }
+    function closebar() {
+    document.getElementById("mysidenav").style.width="0px";
+    } </script>
+    <div class="container">
+        <div class="left"><div class="calhead">Calendar</div> <p><iframe style="margin-top: 20px"; class="calendar" src="https://calendar.google.com/calendar/embed?src=3krj1ei27schfob9affc1dn7ss%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0"; width="800"; height="600"; frameborder="0"; scrolling="no";></iframe> </p>
+            <h4 style="text-align: center;">Rules</h4>
+        <button class="collapse">Rule 1</button>
+<div class="panel">
+  <p>Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text...  /p>
+</div>
+
+<button class="collapse">Rule 2</button>
+<div class="panel">
+  <p>Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text...  </p>
+</div>
+
+<button class="collapse">Rule 3</button>
+<div class="panel">
+  <p>Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text... Some Text...  </p>
+</div> 
+        </div>
+        <script>
+var acc = document.getElementsByClassName("collapse");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
+        
+    <div class="right">
+        <div class="parallax"><a class="cappy" href="#"><span class="border">Top Post</span></a></div> <div style="height:200px;background-color:#262626;font-size:25px; padding-bottom: 150px; color:white; overflow: hidden;">
+        <h3 style="color:limegreen; text-align: center;">Stephen Hawking / Quotes</h3>
+<div class="parscroll" style="font-size: 15px; padding-left: 30px; opacity: 0.7;">"Intelligence is the ability to adapt to change."
+<br>"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge."
+<br>"I have noticed even people who claim everything is predestined, and that we can do nothing to change it, look before they cross the road."
+<br>"We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special."
+<br>"My goal is simple. It is a complete understanding of the universe, why it is as it is and why it exists at all."
+<br>"Life would be tragic if it weren't funny."
+<br>"I have no idea. People who boast about their IQ are losers."
+<br>"People won't have time for you if you are always angry or complaining."
+<br>"We only have to look at ourselves to see how intelligent life might develop into something we wouldn’t want to meet.
+    <br>"Not only does God play dice, but... he sometimes throws them where they cannot be seen."</div>  </div>
+    <div class="parallax2"><a class="cappy2" href="#"><span class="border2">2nd Place</span></a> </div> <div style="height:200px;background-color:#262626;font-size:25px; padding-bottom: 150px; color:white;text-align:center; overflow: hidden" >
+    <h3 style="color: limegreen";>Stephen Hawking / Bio</h3>
+    <div class="parscroll" style="font-size: 15px; padding-left: 30px; opacity: 0.7; text-align: left;">Hawking was born on 8 January 1942[22] in Oxford to Frank (1905–1986) and Isobel Hawking (née Walker; 1915–2013).[23][24] His mother was Scottish.[25] Despite their families' financial constraints, both parents attended the University of Oxford, where Frank read medicine and Isobel read Philosophy, Politics and Economics.[24] The two met shortly after the beginning of the Second World War at a medical research institute where Isobel was working as a secretary and Frank was working as a medical researcher.[24][26] They lived in Highgate; but, as London was being bombed in those years, Isobel went to Oxford to give birth in greater safety.[27] Hawking had two younger sisters, Philippa and Mary, and an adopted brother, Edward.[28]
+
+In 1950, when Hawking's father became head of the division of parasitology at the National Institute for Medical Research, the family moved to St Albans, Hertfordshire.[29][30] In St Albans, the family were considered highly intelligent and somewhat eccentric;[29][31] meals were often spent with each person silently reading a book.[29] They lived a frugal existence in a large, cluttered, and poorly maintained house and travelled in a converted London taxicab.[32][33] During one of Hawking's father's frequent absences working in Africa,[34] the rest of the family spent four months in Majorca visiting his mother's friend Beryl and her husband, the poet Robert Graves.[35]
+        <br> 
+            <br>
+            <a class="wikipage" href="https://en.wikipedia.org/wiki/Stephen_Hawking">-from this Wikipedia link!</a></div> </div>
+        <div class="parallax"></div></div></div>
+    </body>
+</html>
